@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="172.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Label layoutX="30.0" layoutY="78.0" text="Item Name:" />
+      <TextField fx:id="modifyItemName" layoutX="104.0" layoutY="74.0" prefHeight="25.0" prefWidth="169.0" />
+      <Label layoutX="336.0" layoutY="78.0" text="Quantity:" />
+      <TextField fx:id="modifyQuantity" layoutX="399.0" layoutY="74.0" prefHeight="25.0" prefWidth="43.0" />
+      <Label layoutX="533.0" layoutY="78.0" text="Desired Quantity:" />
+      <TextField fx:id="modifyDesired" layoutX="640.0" layoutY="74.0" prefHeight="25.0" prefWidth="43.0" />
+      <Button fx:id="applyChanges" layoutX="582.0" layoutY="21.0" mnemonicParsing="false" onAction="#applyEditChanges" prefHeight="25.0" prefWidth="116.0" text="Apply Changes" />
+   </children>
+</Pane>

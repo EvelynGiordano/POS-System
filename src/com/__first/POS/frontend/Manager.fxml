@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!-- if this line gets erased fx:controller="com.__first.POS.frontend.ManagerController", copy it 
+underneath xmlns:fx="http://javafx.com/fxml/1" -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1067.0" styleClass="background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.__first.POS.frontend.ManagerController">
+   <children>
+      <TabPane fx:id="tabs" layoutY="56.0" prefHeight="744.0" prefWidth="985.0" styleClass="background" stylesheets="@application.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="56.0">
+        <tabs>
+          <Tab fx:id="orderTab">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="682.0" styleClass="background" stylesheets="@application.css">
+                     <children>
+                        <SplitPane layoutY="-2.0" orientation="VERTICAL" prefHeight="470.0" prefWidth="682.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="286.0" prefWidth="827.0">
+                                 <children>
+                                    <ScrollPane layoutX="-2.0" layoutY="37.0" prefHeight="269.0" prefWidth="1069.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="1002.0">
+                                             <children>
+                                                <VBox fx:id="vbox" prefHeight="242.0" prefWidth="1056.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-54.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <TableView fx:id="ordersTable" prefHeight="376.0" prefWidth="1056.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="orderIdColumn" prefWidth="75.0" text="Order Id" />
+                                                          <TableColumn fx:id="placedByColumn" prefWidth="75.0" text="Placed By" />
+                                                            <TableColumn fx:id="orderTimeColumn" minWidth="200.0" prefWidth="200.0" text="Order Time" />
+                                                            <TableColumn fx:id="itemsColumn" minWidth="200.0" prefWidth="400.0" text="Order Items" />
+                                                            <TableColumn fx:id="delOrderCol" maxWidth="400.0" minWidth="100.0" prefWidth="100.0" />
+                                                        </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
+                                    <TextArea fx:id="displayBox" layoutX="14.0" layoutY="324.0" prefHeight="195.0" prefWidth="339.0" />
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="340.0" prefHeight="26.0" prefWidth="260.0" styleClass="order-items-label" stylesheets="@application.css" text="Order Items" textAlignment="CENTER" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fx:id="orderImage" fitHeight="134.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@orderSelected.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+          <Tab fx:id="menuTab">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" prefWidth="500.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <content>
+                              <GridPane fx:id="menuButtons" hgap="5.0" maxWidth="480.0" vgap="5.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="menuNIButton" alignment="CENTER" graphicTextGap="0.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="77.0" prefWidth="91.0" scaleShape="false" text="+" textAlignment="JUSTIFY" wrapText="true">
+                                       <font>
+                                          <Font size="38.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                        <HBox alignment="CENTER" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="540.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+                           <children>
+                              <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Available Customizations">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="customizeList" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" minWidth="40.0" spacing="10.0" HBox.hgrow="NEVER">
+                                 <children>
+                                    <Button fx:id="applyCustomizationButton" mnemonicParsing="false" onAction="#applyCustomization" text="&gt;&gt;">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="removeCustomizationButton" mnemonicParsing="false" onAction="#removeCustomization" text="&lt;&lt;" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label text="Applied Customizations">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="customizeAppliedList" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Button layoutX="589.0" layoutY="423.0" maxHeight="30.0" mnemonicParsing="false" onAction="#createNewCustomization" prefHeight="30.0" prefWidth="175.0" text="Create Customization" textAlignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="771.0" layoutY="423.0" maxHeight="30.0" mnemonicParsing="false" onAction="#modifyExistingCustomization" prefHeight="30.0" prefWidth="175.0" text="Edit Customization" textAlignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="menuDButton" layoutX="801.0" layoutY="468.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="145.0" text="Delete Item" textAlignment="CENTER" textFill="#df0909" wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="menuFButton" layoutX="588.0" layoutY="468.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="201.0" text="Finished" textAlignment="CENTER" textFill="#069a2b">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="itemName" alignment="CENTER" editable="false" layoutX="539.0" layoutY="25.0" prefHeight="44.0" prefWidth="506.0" promptText="item name">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                     </children></AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fx:id="menuImage" fitHeight="123.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+            <Tab fx:id="inventoryTab">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="553.0" prefWidth="871.0" styleClass="background" stylesheets="@application.css">
+                     <children>
+                        <AnchorPane layoutX="1.0" layoutY="120.0" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="1067.0">
+                           <children>
+                              <TableView fx:id="table" editable="true" layoutX="1.0" layoutY="-44.0" prefHeight="340.0" prefWidth="1062.0" stylesheets="@application.css" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="-44.0">
+                                <columns>
+                                  <TableColumn fx:id="item" prefWidth="400.5333536863327" text="Item" />
+                                  <TableColumn fx:id="quantity" prefWidth="126.66668701171875" text="Quantity" />
+                                    <TableColumn fx:id="desiredQuantity" prefWidth="155.33331298828125" text="Desired Quantity" />
+                                    <TableColumn fx:id="editCol" prefWidth="96.39993286132812" />
+                                    <TableColumn fx:id="delCol" prefWidth="85.33331298828125" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Button layoutX="779.0" layoutY="485.0" mnemonicParsing="false" onAction="#addInventoryItem" prefHeight="36.0" prefWidth="119.0" text="Add New Item" />
+                        <Button layoutX="923.0" layoutY="485.0" mnemonicParsing="false" onAction="#saveInventoryChanges" prefHeight="36.0" prefWidth="119.0" text="Save Changes" />
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fx:id="inventoryImage" fitHeight="121.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@grocery-merchandising.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="reportTab">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="1.0" layoutY="42.0" prefHeight="404.0" prefWidth="1065.0" styleClass="pane">
+                           <children>
+                              <SplitPane dividerPositions="0.17628865979381445" layoutX="-7.0" layoutY="-3.0" prefHeight="405.0" prefWidth="1079.0" styleClass="pane">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="148.0">
+                                       <children>
+                                          <Button layoutX="36.0" layoutY="30.0" mnemonicParsing="false" onAction="#SetInventoryReport" prefHeight="36.0" prefWidth="120.0" text="Inventory" />
+                                          <Button layoutX="38.0" layoutY="100.0" mnemonicParsing="false" onAction="#SetMenuReport" prefHeight="36.0" prefWidth="120.0" text="Popular Items" />
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane fx:id="reportDisplay" minHeight="0.0" minWidth="0.0" prefHeight="407.0" prefWidth="885.0">
+                                       <children>
+                                          <BarChart fx:id="graph" layoutX="112.0" layoutY="84.0" prefHeight="280.0" prefWidth="589.0" styleClass="pane">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis fx:id="yAxis" side="LEFT" />
+                                             </yAxis>
+                                          </BarChart>
+                                          <ComboBox fx:id="combo" layoutX="332.0" layoutY="19.0" onAction="#SetInventoryReport" prefWidth="150.0" />
+                                          <Label fx:id="comboLabel" layoutX="224.0" layoutY="19.0" prefHeight="28.0" prefWidth="92.0" text="Inventory Item:" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fx:id="reportsImage" fitHeight="131.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@report.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="userTab">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="391.0" layoutY="72.0" prefHeight="413.0" prefWidth="299.0" styleClass="pane">
+                           <children>
+                              <AnchorPane layoutX="-1.0" layoutY="-1.0" minHeight="0.0" minWidth="0.0" prefHeight="422.0" prefWidth="299.0">
+                                 <children>
+                                    <Pane layoutX="1.0" layoutY="15.0" prefHeight="420.0" prefWidth="299.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <ComboBox fx:id="roles" layoutX="83.0" layoutY="42.0" prefWidth="150.0" />
+                                          <Label layoutX="40.0" layoutY="46.0" text="Role:" />
+                                          <TextField fx:id="firstName" layoutX="84.0" layoutY="81.0" />
+                                          <Label layoutX="36.0" layoutY="84.0" text="Name:" />
+                                          <TextField fx:id="userID" layoutX="86.0" layoutY="175.0" />
+                                          <Label layoutX="22.0" layoutY="180.0" text="Username:" />
+                                          <Button layoutX="192.0" layoutY="297.0" mnemonicParsing="false" onAction="#addNewUser" text="Save User" />
+                                          <PasswordField fx:id="password" layoutX="86.0" layoutY="218.0" />
+                                          <Label layoutX="26.0" layoutY="222.0" text="Password:" />
+                                          <MenuBar layoutX="1.0" layoutY="1.0" prefHeight="25.0" prefWidth="299.0">
+                                            <menus>
+                                              <Menu mnemonicParsing="false" text="Add New User" />
+                                            </menus>
+                                          </MenuBar>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fx:id="usersImage" fitHeight="131.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@team.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="logout" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="25.0" prefHeight="17.0" prefWidth="102.0" text="Orders" textAlignment="CENTER">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="294.0" layoutY="27.0" prefHeight="17.0" prefWidth="102.0" text="Menu">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="487.0" layoutY="27.0" prefHeight="17.0" prefWidth="102.0" text="Inventory">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="685.0" layoutY="25.0" prefHeight="17.0" prefWidth="102.0" text="Reports">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="875.0" layoutY="24.0" prefHeight="17.0" prefWidth="102.0" text="Users">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

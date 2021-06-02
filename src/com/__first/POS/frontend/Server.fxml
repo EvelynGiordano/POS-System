@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- if this line gets erased fx:controller="com.__first.POS.frontend.ServerController", copy it 
+underneath xmlns:fx="http://javafx.com/fxml/1" -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" styleClass="background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.__first.POS.frontend.ServerController">
+   <children>
+      <TabPane fx:id="tabs" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@application.css" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="30.0" tabMaxWidth="200.0" tabMinHeight="30.0" tabMinWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <tabs>
+            <Tab fx:id="orderTab">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@application.css">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.4000244140625" minWidth="10.0" prefWidth="363.20001220703125" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.199951171875" minWidth="10.0" prefWidth="156.79998779296875" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <ScrollPane fitToWidth="true" prefHeight="591.0" prefWidth="393.0">
+                                 <content>
+                                    <GridPane fx:id="itemList" hgap="5.0" maxWidth="480.0" vgap="5.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                              <SplitPane dividerPositions="0.7, 0.83" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="1">
+                                 <items>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <Text fx:id="itemName" layoutX="10.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="test" textAlignment="CENTER" wrappingWidth="205.336669921875" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.663330078125" AnchorPane.topAnchor="1.6640625">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Text>
+                                          <Accordion fx:id="customAccordion" layoutX="3.0" layoutY="34.0" prefHeight="300.0" prefWidth="209.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <Label fx:id="orderItemPrice" alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="212.0" text="Price: " textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <Button fx:id="addToOrder" layoutX="79.0" layoutY="20.0" mnemonicParsing="false" text="Add to Order" textAlignment="CENTER" textFill="#0f30d7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font name="System Bold" size="21.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                              <SplitPane dividerPositions="0.7, 0.83" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="2">
+                                 <items>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <ListView fx:id="orderDisplay" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <Label fx:id="totalOrderPriceLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="157.0" text="Total: " AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <Button fx:id="submitOrder" layoutX="50.0" layoutY="20.0" mnemonicParsing="false" text="Checkout" textAlignment="CENTER" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font name="System Bold" size="22.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fx:id="orderImage" fitHeight="123.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@serv_menu_select.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="cookingTab">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="ordersTable" layoutX="44.0" layoutY="29.0" prefHeight="208.0" prefWidth="711.0">
+                           <columns>
+                              <TableColumn fx:id="orderIdColumn" prefWidth="75.0" text="Order Id" />
+                              <TableColumn fx:id="placedByColumn" prefWidth="75.0" text="Placed By" />
+                              <TableColumn fx:id="orderTimeColumn" minWidth="200.0" prefWidth="200.0" text="Order Time" />
+                              <TableColumn fx:id="itemsColumn" minWidth="200.0" prefWidth="224.79995727539062" text="Order Items" />
+                              <TableColumn fx:id="delOrderCol" maxWidth="400.0" minWidth="100.0" prefWidth="134.8000366210938" />
+                           </columns>
+                        </TableView>
+                        <TextArea fx:id="displayBox" layoutX="239.0" layoutY="246.0" prefHeight="135.0" prefWidth="321.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="254.0" prefHeight="26.0" prefWidth="260.0" styleClass="order-items-label" stylesheets="@application.css" text="Order Items" textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fx:id="cookingImage" fitHeight="123.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@serv_chef_hat.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="readyTab">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="readyTable" layoutX="44.0" layoutY="29.0" prefHeight="378.0" prefWidth="775.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0">
+                           <columns>
+                              <TableColumn fx:id="readyIDColumn" prefWidth="75.0" text="Order Id" />
+                              <TableColumn fx:id="readyPlacedColumn" prefWidth="75.0" text="Placed By" />
+                              <TableColumn fx:id="readyItemsColumn" minWidth="200.0" prefWidth="499.19993591308594" text="Order Items" />
+                              <TableColumn fx:id="readyServeColumn" maxWidth="400.0" minWidth="0.0" prefWidth="58.4000244140625" text="Serve" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fx:id="readyImage" fitHeight="123.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@serv_food.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Label layoutX="99.0" layoutY="14.0" prefHeight="30.0" prefWidth="101.0" text="New Order">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="264.0" layoutY="14.0" prefHeight="30.0" prefWidth="167.0" text="Currently Cooking">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="468.0" layoutY="14.0" prefHeight="30.0" prefWidth="131.0" text="Ready to Serve">
+         <font>
+            <Font name="Perpetua Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="logout" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#logout" text="Log Out" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+   </children>
+</AnchorPane>
